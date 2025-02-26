@@ -1,0 +1,143 @@
+/* src/components/Game.css */
+@font-face {
+  font-family: "PressStart";
+  src: url("../assets/fonts/PressStart.ttf") format("woff2");
+}
+
+/* Базовые стили */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "PressStart";
+  background-color: #483d8c;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px; /* Ограничение максимальной ширины */
+}
+
+.game-container h2 {
+  margin-bottom: 5vh; /* Относительный отступ */
+  font-size: 1.4rem; /* Относительный размер шрифта */
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 250px; /* Отступ между кнопками */
+  flex-wrap: wrap; /* Перенос кнопок на новую строку на маленьких экранах */
+}
+
+.choices button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+.choices button:hover {
+  transform: scale(1.1); /* Увеличиваем иконку при наведении */
+}
+
+.icon {
+  width: 20vw; /* Относительный размер иконок */
+  height: 20vw;
+  max-width: 150px; /* Ограничение максимального размера */
+  max-height: 150px;
+}
+
+.results {
+  color: #ffffff;
+  margin-top: 10vh; /* Относительный отступ */
+  margin-bottom: 10vh;
+}
+
+.reset-button {
+  font-family: "PressStart";
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1rem; /* Относительный размер шрифта */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 5vh; /* Относительный отступ */
+}
+
+.reset-button:hover {
+  background-color: #ff0000;
+}
+
+/* Медиа-запросы для адаптации под разные экраны */
+
+/* Мобильные устройства (ширина до 600px) */
+@media (max-width: 600px) {
+  .game-container h3 {
+    font-size: 1.5rem; /* Уменьшаем размер шрифта */
+    margin-bottom: 3vh;
+  }
+
+  .icon {
+    width: 25vw; /* Увеличиваем размер иконок для мобильных */
+    height: 25vw;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .results {
+    font-size: 1rem;
+  }
+
+  .reset-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Планшеты (ширина от 601px до 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .icon {
+    width: 22vw;
+    height: 22vw;
+    max-width: 130px;
+    max-height: 130px;
+  }
+
+  .results {
+    font-size: 1.1rem;
+  }
+
+  .reset-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Десктопы (ширина от 901px) */
+@media (min-width: 901px) {
+  .icon {
+    width: 15vw;
+    height: 15vw;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .results {
+    font-size: 1.1rem;
+  }
+
+  .reset-button {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+  }
+}
